@@ -1,4 +1,4 @@
-# config.py - FINAL REVISION FOR DARK TABS AND VIBRANT ALERTS
+# config.py
 
 import streamlit as st
 
@@ -7,8 +7,8 @@ DATASET_PATH = 'images'
 INDEX_FILE = 'faiss_index.bin'
 TOP_K = 5 
 ACCENTURE_PURPLE = "#A100FF" 
-DARK_BG = "#000000" # Black background for tabs/containers
-LIGHT_TEXT = "#FFFFFF" # White text for readability on black
+DARK_BG = "#000000" # Black background
+LIGHT_TEXT = "#FFFFFF" # White text
 
 # --- CUSTOM CSS FUNCTION ---
 
