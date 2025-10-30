@@ -7,8 +7,8 @@ import numpy as np
 import faiss
 import os
 
-# --- CONFIGURATION (Must match the app.py settings) ---
-DATASET_PATH = 'images'  # Folder containing your MIRFlickr images (or subset)
+# --- CONFIGURATION ---
+DATASET_PATH = 'images'  # Dataset Folder
 INDEX_FILE = 'faiss_index.bin'
 VECTOR_DIM = 2048 # ResNet50 output dimension
 
@@ -76,4 +76,5 @@ def create_faiss_index(dataset_path):
 # --- Main Execution ---
 if __name__ == '__main__':
     print("Starting FAISS Index Creation...")
+
     create_faiss_index(DATASET_PATH)
