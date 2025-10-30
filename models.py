@@ -8,14 +8,14 @@ import os
 from transformers import BlipProcessor, BlipForConditionalGeneration
 from config import INDEX_FILE
 
-# --- CACHED RESOURCES (AI Model Loading) ---
+# --- CACHED RESOURCES ---
 
 @st.cache_resource
 def load_model_resnet():
     """Loads and caches the ResNet50 model for feature extraction."""
     with st.spinner("Loading ResNet50 model..."):
         model = models.resnet50(weights=models.ResNet50_Weights.DEFAULT)
-        # Remove the final classification layer
+        # Removal of the final classification layer
         model = torch.nn.Sequential(*(list(model.children())[:-1]))
         model.eval()
         return model
@@ -36,4 +36,5 @@ def load_faiss_index(image_filenames):
         
     with st.spinner("Loading FAISS Index..."):
         index = faiss.read_index(INDEX_FILE)
+
         return index, image_filenames
