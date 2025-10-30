@@ -8,7 +8,6 @@ import imagehash
 import math
 import os
 
-# Assuming DATASET_PATH is imported from config
 from config import DATASET_PATH 
 
 # --- UTILITY FUNCTIONS ---
@@ -42,7 +41,7 @@ def search_index(index, query_features, image_ids, k):
         dist_max = 35000.0
         
         for i, dist in zip(indices[0], distances[0]):
-            # Similarity scaling logic from the original code
+            # Similarity scaling logic from the old code
             clamped_dist = max(0.0, min(dist, dist_max))
             normalized_dist = math.log1p(clamped_dist - dist_min) / math.log1p(dist_max - dist_min)
             similarity_score = 100.0 * (1.0 - normalized_dist)
@@ -60,7 +59,7 @@ def verify_phash(query_img, original_path):
         original_img = Image.open(original_path)
         original_hash = imagehash.phash(original_img)
         
-        # Check against a mirrored version to detect simple flips
+        # Check against mirrored versions
         flipped_original_img = original_img.transpose(Image.FLIP_LEFT_RIGHT)
         flipped_original_hash = imagehash.phash(flipped_original_img)
         
@@ -108,4 +107,5 @@ def check_metadata_mismatch(query_context, original_metadata):
         if any(w in query_keywords for w in disaster_words) and any(t in original_metadata['tags'] for t in leisure_words):
              flags.append("TAG MISMATCH: Query suggests conflict/disaster, but VLM tags suggest a leisure/calm scene.")
              
+
     return flags
