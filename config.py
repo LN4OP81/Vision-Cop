@@ -1,5 +1,3 @@
-# config.py
-
 import streamlit as st
 
 # --- CORE CONFIGURATION ---
@@ -21,20 +19,20 @@ def load_css():
             background-image: url("C:/Users/Pranay/OneDrive/Desktop/HACKATHON/bg.jpg");
             background-size: cover;
         }}
-        /* Custom Purple Title */
+        /* Custom Purple Title - MUCH BIGGER AND BOLDER */
         .big-font {{ 
-            font-size: 3.5em !important; 
-            font-weight: bold; 
+            font-size: 5em !important; /* Increased from 3.5em to 5em */
+            font-weight: 900 !important; /* Max boldness */
             text-align: center; 
             color: {ACCENTURE_PURPLE}; 
         }}
         .small-font {{ 
-            font-size: 1.5em !important; 
-            font-weight: normal; 
+            font-size: 2.2em !important; /* Increased from 1.5em to 2.2em */
+            font-weight: 700 !important; /* Made bolder */
             text-align: center; 
             margin-top: -30px; 
             margin-bottom: 20px; 
-            color: #36454F; /* Keep secondary header text dark */
+            color: {LIGHT_TEXT}; /* Now set to completely white */
         }}
         
         /* 1. BLACK BACKGROUND HACK: Target the main container elements */
