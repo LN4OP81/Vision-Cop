@@ -37,8 +37,8 @@ Clone the repository and install all required libraries. This installation inclu
 
 ```
 # Clone the repository
-git clone [YOUR_REPOSITORY_URL_HERE]
-cd [YOUR_PROJECT_FOLDER]
+git clone https://github.com/LN4OP81/Vision-Cop
+cd Vision-Cop
 
 # Install all dependencies
 pip install torch torchvision torchaudio faiss-cpu streamlit pillow numpy tqdm transformers imagehash fastapi uvicorn
